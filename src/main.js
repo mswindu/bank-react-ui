@@ -1,13 +1,29 @@
 import Vue from 'vue'
+import VueRouter from 'vue-router'
 import App from './App.vue'
-import VueResource from 'vue-resource'
 import Vuetify from 'vuetify'
+
+import routes from './routes/routes'
 import 'vuetify/dist/vuetify.css'
 
-Vue.use(VueResource)
-Vue.use(Vuetify)
+Vue.use(VueRouter)
+//Vue.use(Vuetify)
+Vue.use(Vuetify, {
+  theme: {
+    primary: '#1867C0',
+    secondary: '#5CBBF6',
+    tertiary: '#E57373',
+    accent: '#005CAF'
+  }
+})
+
+// configure router
+const router = new VueRouter({
+  routes // short for routes: routes
+})
 
 new Vue({
     el: '#app',
-    render: a => a(App)
+    render: a => a(App),
+    router
 })
