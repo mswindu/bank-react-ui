@@ -58,17 +58,13 @@ module.exports = {
             loader: ['style-loader', 'css-loader']
           },
           {
-            test: /\.styl$/,
+            test: /\.styl(us)?$/,
             loader: ['style-loader', 'css-loader', 'stylus-loader']
           }
         ]
     },
     plugins: [
-        new VueLoaderPlugin(),
-        // new HtmlWebpackPlugin({
-        //     filename: 'index.html',
-        //     template: 'public/index.html'
-        // })
+        new VueLoaderPlugin()
     ],
     resolve: {
         extensions: ['.js', '.vue'],
