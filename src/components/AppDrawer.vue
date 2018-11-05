@@ -11,31 +11,46 @@
         <span class="hidden-sm-and-down">Vue Material</span>
       </v-toolbar-title>        
     </v-toolbar>
-    <v-list dense>
-      <v-list-tile @click="">
-        <v-list-tile-action>
-          <v-icon>home</v-icon>
-        </v-list-tile-action>
-        <v-list-tile-content>
-          <v-list-tile-title>Home</v-list-tile-title>
-        </v-list-tile-content>
-      </v-list-tile>
-      <v-list-tile @click="">
-        <v-list-tile-action>
-          <v-icon>contact_mail</v-icon>
-        </v-list-tile-action>
-        <v-list-tile-content>
-          <v-list-tile-title>Contact</v-list-tile-title>
-        </v-list-tile-content>
-      </v-list-tile>
-    </v-list>
+    <vue-perfect-scrollbar 
+      class="drawer-menu--scroll" 
+      :settings="scrollSettings"
+    >
+      <v-list 
+        dense 
+        expand
+      >
+        <template v-for="(item, i) in menus">
+          <v-list-tile :to="!item.href ? { name: item.name } : null" :href="item.href" ripple="ripple" :disabled="item.disabled" :target="item.target" rel="noopener" :key="item.name">
+            <v-list-tile-action v-if="item.icon">
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile-content>
+            <v-list-tile-action v-if="item.subAction">
+              <v-icon class="success--text">{{ item.subAction }}</v-icon>
+            </v-list-tile-action>
+          </v-list-tile>
+        </template>
+      </v-list>
+    </vue-perfect-scrollbar>
   </v-navigation-drawer>
 </template>
 
 <script>
-export default {
+  import menu from '../api/menu.js';
+  import VuePerfectScrollbar from 'vue-perfect-scrollbar';
+  
+  export default {
+    components: {
+      VuePerfectScrollbar,
+    },
     data: () => ({
-      drawer: false   
+      drawer: false,
+      menus: menu,
+      scrollSettings: {
+        maxScrollbarLength: 160
+      }
     }),
     created () {
       window.getApp.$on('APP_DRAWER_TOGGLED', () => {

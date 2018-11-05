@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 import Vuetify from 'vuetify'
-import axios from 'axios'
 
 import routes from './routes/routes'
 import 'vuetify/dist/vuetify.css'
@@ -25,9 +24,6 @@ const router = new VueRouter({
 
 new Vue({
     el: '#app',
-    mounted () {
-      window.axios = axios
-    },
     render: a => a(App),
     router
 })

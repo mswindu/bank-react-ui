@@ -3,7 +3,7 @@
     color="primary" 
     dark 
     fixed
-    height="58"
+    height="64"
     extension-height="48"
     app
   >

@@ -17,13 +17,7 @@ module.exports = {
         port: 8000,
         allowedHosts: [
             'localhost:9000'
-        ],
-        proxy: {
-            '/api': {
-                target: 'http://localhost:9000',
-                changeOrigin: true
-            }
-        }
+        ]
     },
     module: {
         rules: [
