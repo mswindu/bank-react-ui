@@ -7,8 +7,8 @@
     :loading="loading"
     class="elevation-1"
   >
-    <template 
-      slot="items" 
+    <template
+      slot="items"
       slot-scope="props"
     >
       <td class="text-xs-left">{{ props.item.uuid }}</td>
@@ -65,13 +65,13 @@
           let items = []
 
           axios.get('http://localhost:9000/accounts')
-          .then(res => {
-            console.log(res.data)
-            items = res.data
-          })
-          .catch(err => {
-            console.log(err)
-          })
+            .then(res => {
+              console.log(res.data)
+              items = res.data
+            })
+            .catch(err => {
+              console.log(err)
+            })
 
           const total = items.length
 
@@ -104,7 +104,7 @@
             })
           }, 500)
         })
-      }      
+      }
     }
   }
 </script>

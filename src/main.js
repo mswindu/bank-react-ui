@@ -7,7 +7,7 @@ import routes from './routes/routes'
 import 'vuetify/dist/vuetify.css'
 
 Vue.use(VueRouter)
-//Vue.use(Vuetify)
+// Vue.use(Vuetify)
 Vue.use(Vuetify, {
   theme: {
     primary: '#1867C0',
@@ -22,8 +22,8 @@ const router = new VueRouter({
   routes // short for routes: routes
 })
 
-new Vue({
-    el: '#app',
-    render: a => a(App),
-    router
+new Vue({ // eslint-disable-line no-new
+  el: '#app',
+  render: a => a(App),
+  router
 })

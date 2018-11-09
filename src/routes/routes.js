@@ -1,4 +1,4 @@
-import Dashboard  from '../pages/Dashboard.vue'
+import Dashboard from '../pages/Dashboard.vue'
 
 const routes = [
   {
@@ -14,7 +14,7 @@ const routes = [
     meta: { breadcrumb: true },
     name: 'Dashboard',
     component: Dashboard
-  },
+  }
 ]
 
 export default routes

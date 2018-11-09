@@ -1,16 +1,16 @@
-const Menu =  [
+const Menu = [
   {
     title: 'Dashboard',
     group: 'apps',
     icon: 'dashboard',
-    name: 'Dashboard',
+    name: 'Dashboard'
   },
   {
     title: 'Media',
     group: 'apps',
     name: 'Media',
-    icon: 'perm_media',
-  },
+    icon: 'perm_media'
+  }
 ]
 
-export default Menu;
+export default Menu

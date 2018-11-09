@@ -1,24 +1,24 @@
 <template>
   <div id="appRoot">
-    <v-app 
-      id="inspire" 
+    <v-app
+      id="inspire"
       class="app"
     >
-      <app-drawer class="app--drawer"></app-drawer>
-      <app-toolbar class="app--toolbar"></app-toolbar>
+      <app-drawer class="app--drawer" />
+      <app-toolbar class="app--toolbar" />
       <v-content>
         <div class="page-wrapper">
-          <router-view></router-view>
+          <router-view />
         </div>
-        <v-footer 
-          height="auto" 
+        <v-footer
+          height="auto"
           class="white pa-3 app--footer"
         >
           <span class="caption">Design &copy; {{ new Date().getFullYear() }}</span>
-          <v-spacer></v-spacer>
-          <span class="caption mr-1"> Make With Love </span> 
-          <v-icon 
-            color="pink" 
+          <v-spacer />
+          <span class="caption mr-1"> Make With Love </span>
+          <v-icon
+            color="pink"
             small
           >
             favorite
@@ -30,17 +30,17 @@
 </template>
 
 <script>
-  import AppDrawer from './components/AppDrawer.vue';
-  import AppToolbar from './components/AppToolbar.vue';
+  import AppDrawer from './components/AppDrawer.vue'
+  import AppToolbar from './components/AppToolbar.vue'
   export default {
     components: {
       AppDrawer,
-      AppToolbar,
+      AppToolbar
     },
     created () {
-      window.getApp = this;
+      window.getApp = this
     }
-  }  
+  }
 </script>
 
 <style lang="stylus" scoped>
