@@ -1,13 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
-import Vuetify from 'vuetify'
+// Подгружаем только необходимые компоненты
+import Vuetify from 'vuetify/lib'
 
 import routes from './routes/routes'
-import 'vuetify/dist/vuetify.css'
+
+import 'vuetify/src/stylus/app.styl'
 
 Vue.use(VueRouter)
-// Vue.use(Vuetify)
+
 Vue.use(Vuetify, {
   theme: {
     primary: '#1867C0',

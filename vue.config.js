@@ -1,4 +1,5 @@
 const path = require('path')
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 
 module.exports = {
   // Выполнять ли линтинг кода при сохранении во время разработки
@@ -20,5 +21,10 @@ module.exports = {
     if (process.env.NODE_ENV === 'development') {
       devtool = '#eval-source-map'
     }
+  },
+  configureWebpack: {
+    plugins: [
+      new VuetifyLoaderPlugin()
+    ]
   }
 }
