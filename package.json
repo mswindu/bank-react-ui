@@ -5,13 +5,13 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "start": "vue-cli-service serve --mode development",
+    "build-dev": "vue-cli-service build --mode development",
+    "build-prod": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "cross-env": "^5.2.0",
     "vue": "^2.5.17",
     "vue-perfect-scrollbar": "^0.1.0",
     "vue-router": "^3.0.1",

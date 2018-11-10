@@ -1,7 +1,8 @@
 const path = require('path')
 
 module.exports = {
-  lintOnSave: false,
+  // Выполнять ли линтинг кода при сохранении во время разработки
+  lintOnSave: process.env.NODE_ENV !== 'production',
   pages: {
     index: {
       // entry for the page
@@ -15,15 +16,9 @@ module.exports = {
       chunks: ['chunk-vendors', 'chunk-common', 'index'],
     },
   },
-  configureWebpack: {
-    resolve: {
-      alias: {
-        'vue$': 'vue/dist/vue.esm.js',
-        '@': path.resolve('src'),
-        'src': path.resolve('src'),
-        'components': path.resolve('src/components')
-      }
-    },
-    devtool: '#eval-source-map'
+  chainWebpack: webpackConfig => {
+    if (process.env.NODE_ENV === 'development') {
+      devtool = '#eval-source-map'
+    }
   }
 }
