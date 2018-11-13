@@ -18,13 +18,16 @@ module.exports = {
     },
   },
   chainWebpack: webpackConfig => {
-    if (process.env.NODE_ENV === 'development') {
-      devtool = '#eval-source-map'
+    webpackConfig.resolve.alias
+      .set('@utils', path.resolve('src/utils'))
+
+    webpackConfig
+      .plugin('VuetifyLoaderPlugin')
+      .use(VuetifyLoaderPlugin)
+
+    if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') {
+      webpackConfig
+        .devtool('#eval-source-map')
     }
-  },
-  configureWebpack: {
-    plugins: [
-      new VuetifyLoaderPlugin()
-    ]
   }
 }
