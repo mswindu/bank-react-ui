@@ -1,0 +1,2 @@
+# DEPRECATED
+# bank-vue-ui
